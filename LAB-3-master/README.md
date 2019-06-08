@@ -1,8 +1,8 @@
 Jarvis
 ============
 
-Aplicativo de cadastro e gerenciamento de conteudos./n
-nesse momento este app tem as seguintes funcionalidades:
+Aplicativo de cadastro e gerenciamento de conteudos.
+Nesse momento este app tem as seguintes funcionalidades:
   - Cadastro de conteudo
   - Cadastro de usuario
   - Login de usuario
