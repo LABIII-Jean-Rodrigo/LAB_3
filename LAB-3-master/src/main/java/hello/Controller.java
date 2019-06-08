@@ -41,14 +41,7 @@ public class Controller {
 		});
 	}
 	
-	//public void logarUsuario(){
-		//get("/usuario/:email/:senha", (req, res) -> {
-			
-			//List<Usuario> usuarioEncontrado = model.logar(new Login(req.params(":email"), req.params(":senha")));
-			//return new Gson().toJson(usuarioEncontrado);
-			
-		//});
-	//}
+	
 	
 	public void adicionarConteudo(){
 		
@@ -79,38 +72,4 @@ public class Controller {
 		});
 	}
 	
-
-	//public void buscarConteudoTipo(){
-	//	get("/conteudo/:tipo", (req, res) -> {
-	//	
-	//		List<Conteudo> conteudosEncontrado = model.buscarConteudoPorTipo(req.params(":tipo"));	
-	//		return new Gson().toJson(conteudosEncontrado);
-	//		
-	//	});
-	//}
-	
-	//public void buscarConteudoNota() {
-	//	get("/nota/:tipo/:nota", (req, res) -> {
-	//	
-	//		List<Conteudo> conteudosEncontrado = model.buscarConteudoPorNota(req.params(":tipo"), (req.params(":nota")));	
-	//		return new Gson().toJson(conteudosEncontrado);
-	//	});
-	//}
-	
-	//public void buscarConteudoAno() {
-	//	get("/ano/:tipo/:ano", (req, res) -> {
-	//		
-	//		List<Conteudo> conteudosEncontrado = model.buscarConteudoPorAno(req.params(":tipo"), (req.params(":ano")));	
-	//		return new Gson().toJson(conteudosEncontrado);
-	//	});
-	//}
-	
-	//public void buscarConteudoNome() {
-	//	get("/nome/:tipo/:nome", (req, res) -> {
-	//		
-	//		List<Conteudo> conteudosEncontrado = model.buscarConteudoPorNome(req.params(":tipo"), (req.params(":nome")));	
-	//		return new Gson().toJson(conteudosEncontrado);
-	//	});
-	//}
-
 }
