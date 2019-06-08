@@ -5,7 +5,7 @@
     <title>Logar Usuario</title>
 	
     
-	<script src="js/jquery.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
 
 	<link href="css/bootstrap.min.css" rel=stylesheet>
@@ -15,12 +15,11 @@
 		$(document).ready(function(){
 			
 
-			$("#login").click(function() {
+			$("#busca").click(function() {
 			
 			
-			var email = $("#email").val();				
-
-			var senha = $("#senha").val();				
+			var email = $("#email").val();
+			var senha = $("#senha").val();
 			
 					
 				$("#dadosUsuario").empty();
@@ -31,14 +30,15 @@
 				$.getJSON(url, function(data) {
 						
 					
-						var itens = [];
+						var items = [];
 						
 						$.each(data, function(i){
 							
-							itens.push("<tr> <td>"+ this.username +"</td><td>" + this.descricao + "</td><td>"+ this.genero + "</td><td>"+ this.cont + "</td></tr>");			
+							items.push("<tr> <td>"+ this.username + "</td><td>"+ this.descricao + "</td><td>"+ this.genero + "</td></tr>");
+							
 						});
 									
-						$("#dadosUsuario").append(itens);
+						$("#dadosUsuario").append(items);
 						
 						
 				});
@@ -56,27 +56,44 @@
   <body>
 		
 
-  		<div id="painelLogin">
+  		<div id="painelBusca">
             
 		
+		<div class="form-horizontal" method="get" id="form">
+        <div class="form-group form-group">
+				<div class="form-group form-group">
+					<label for="" class="col-md-3 control-label">Email</label>
+					<div class="col-md-3">
+						<input required="required" type="" class="form-control" id="email" placeholder="Email">
+					</div>
+					<div class="col-md-3">
+						<label for="inputEmail3" class="control-label">Ex: Peter@Parker.com</label>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputPassword3" class="col-md-3 control-label">Senha</label>
+				<div class="col-md-3">
+					<input required="required" type="password" class="form-control" id="senha" placeholder="Senha">
+				</div>
+				<div class="col-md-3">
+					<label for="inputEmail3" class="control-label">Ex: *********</label>
+				</div>
+			</div>
 		
-        <input id="email" class="form-control col-md-offset-0" type="text" placeholder="Informe o email do usuario">    
-        
-        <input id="senha" class="form-control col-md-offset-0" type="text" placeholder="Informe a senha do usuario">    
-        
+        </div>
             
         </div>
             
-		<button id="login" class="btn btn-success col-md-offset-5">Login</button>
-		
+		<button id="busca" type="submit" class="btn btn-success col-md-offset-5">Buscar</button>
 		<table class="table table-bordered"> 
 			<caption>Usuario</caption>
 				<thead>
 					<tr> 
 						<th>Nome</th>
 						<th>Descricao</th> 
-						<th>Genero</th> 	
-						<th>Conteudos</th> 				
+						<th>Genero</th> 
 					</tr> 
 				</thead> 
 				

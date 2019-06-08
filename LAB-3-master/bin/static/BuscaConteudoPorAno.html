@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Busca Conteudos</title>
+    <title>Busca por Ano</title>
 	
     
 	<script src="js/jquery.js"></script>
@@ -18,12 +18,12 @@
 			$("#busca").click(function() {
 
 				var tipo = $( "#tipo option:selected" ).text();
-				var nome = $("#nome").val();
+				var ano = $("#ano").val();
 				
 					
 				$("#dadosConteudo").empty();
 					
-				var url = "/conteudo/"+tipo+"/"+nome+"";
+				var url = "/conteudos/"+tipo+"/"+ano+"";
 				
 					
 
@@ -75,12 +75,12 @@
             
         <div class="form-group">
 				<div class="form-group form-group">
-					<label for="" class="col-md-4 control-label">Nome</label>
+					<label for="" class="col-md-4 control-label">Ano</label>
 					<div class="col-md-4">
-						<input required="required" type="" class="form-control" id="nome" placeholder="Nome">
+						<input required="required" type="" class="form-control" id="ano" placeholder="Ano">
 					</div>
 					<div class="col-md-4">
-						<label for="inputEmail3" class="control-label">Ex: A Volta Dos Que Nao Foram</label>
+						<label for="inputEmail3" class="control-label">Ex: 1984</label>
 					</div>
 				</div>
 			</div>

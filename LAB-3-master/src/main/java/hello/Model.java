@@ -44,7 +44,7 @@ public class Model {
 		return true;
 	}
 	
-	public List<Usuario> buscarUsuarioPorNome(String username){
+	public List<Usuario> loginUser(String email, String senha){
 		List<Usuario> result = new LinkedList<Usuario>();
 		
 		Query query =  usuariosbd.query();
@@ -53,21 +53,12 @@ public class Model {
 		ObjectSet<Usuario> allUsuariosbd = query.execute();
 		
 		for(Usuario usuario:allUsuariosbd) {
-			if(usuario.getUsername().equals(username)) result.add(usuario);
+			if(usuario.getEmail().equals(email) && usuario.getSenha().equals(senha)) result.add(usuario);
 			
 		}
 		
 		 return result;
 	}
-	
-	
-	//public List<Usuario> logar(Login log) {
-		//List<Usuario> UsuarioEncontrado = new LinkedList<Usuario>();
-		//for(Usuario usuario:usuarios){
-		//if(usuario.getLog().match(log)) UsuarioEncontrado.add(usuario);
-		//}
-		//return UsuarioEncontrado;
-	//}
 	
 	
 	public boolean cadastroConteudo(Conteudo conteudo){
@@ -132,53 +123,22 @@ public class Model {
 		 return result;
 	}
 	
-	//public List<Conteudo> buscarConteudoPorTipo(String tipo){
-	//List<Conteudo> conteudosEncontrados = new LinkedList<Conteudo>();
-	//for(Conteudo conteudo:conteudos){
-	//if(conteudo.getTipo().equals(tipo)) conteudosEncontrados.add(conteudo);
-	//}
-	//return conteudosEncontrados;
-	//}
 	
+	public List<Conteudo> buscarConteudoPorAno(String tipo, String ano){
+		List<Conteudo> result = new LinkedList<Conteudo>();
+		
+		Query query =  conteudosbd.query();
+		query.constrain(Conteudo.class);
+		
+		ObjectSet<Conteudo> allConteudosbd = query.execute();
+		
+		for(Conteudo conteudo:allConteudosbd) {
+			if(conteudo.getTipo().equals(tipo) && conteudo.getCaract().getAno().equals(ano)) result.add(conteudo);
+			
+		}
+		
+		 return result;
+	}
 	
-	//public List<Conteudo> buscarConteudoPorCaracteristicas(Caracteristicas caract){
-	//List<Conteudo> conteudosEncontrados = new LinkedList<Conteudo>();
-	//for(Conteudo conteudo:conteudos){
-	//if(conteudo.getCaract().comparar(caract)) conteudosEncontrados.add(conteudo);
-	//}
-	//return conteudosEncontrados;
-	//}
-	
-	
-	//public List<Conteudo> buscarConteudoPorNota(String tipo, String nota){
-	//	List<Conteudo> conteudosEncontrados = new LinkedList<Conteudo>();
-	//	for(Conteudo conteudo:conteudos){
-	//	if(conteudo.getTipo().equals(tipo) && conteudo.getCaract().getNota().equals(nota)) conteudosEncontrados.add(conteudo);
-	//	}
-	//	return conteudosEncontrados;
-	//	}
-	
-	
-	//public List<Conteudo> buscarConteudoPorAno(String tipo, String ano){
-	//	List<Conteudo> conteudosEncontrados = new LinkedList<Conteudo>();
-	//	for(Conteudo conteudo:conteudos){
-	//	if(conteudo.getTipo().equals(tipo) && conteudo.getCaract().getAno().equals(ano)) conteudosEncontrados.add(conteudo);
-	//	}
-	//	return conteudosEncontrados;
-	//	}
-	
-	
-	//public List<Conteudo> buscarConteudoPorNome(String tipo, String nome){
-	//	List<Conteudo> conteudosEncontrados = new LinkedList<Conteudo>();
-	//	for(Conteudo conteudo:conteudos){
-	//	if(conteudo.getTipo().equals(tipo) && conteudo.getCaract().getNome().equals(nome)) conteudosEncontrados.add(conteudo);
-	//	}
-	//	return conteudosEncontrados;
-	//	}
-	
-	
-	//public List<Conteudo> getConteudos(){
-	//return conteudos;
-	//}
 
 }

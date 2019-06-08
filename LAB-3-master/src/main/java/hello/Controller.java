@@ -34,9 +34,9 @@ public class Controller {
 		});
 	}
 	
-	public void buscarUsuarioNome(){
-		get("/usuario/:username", (req, res) -> {
-			List<Usuario> usuariosEncontrados = model.buscarUsuarioPorNome(req.params(":username"));	
+	public void logaUser(){
+		get("/usuario/:email/:senha", (req, res) -> {
+			List<Usuario> usuariosEncontrados = model.loginUser(req.params(":email"), req.params(":senha"));	
 			return new Gson().toJson(usuariosEncontrados);
 		});
 	}
@@ -68,6 +68,13 @@ public class Controller {
 	public void buscarConteudoPorTipo(){
 		get("/conteudo/:tipo", (req, res) -> {
 			List<Conteudo> conteudosEncontrados = model.buscarConteudoPorTipo(req.params(":tipo"));	
+			return new Gson().toJson(conteudosEncontrados);
+		});
+	}
+	
+	public void buscarConteudoPorAno(){
+		get("/conteudos/:tipo/:ano", (req, res) -> {
+			List<Conteudo> conteudosEncontrados = model.buscarConteudoPorAno(req.params(":tipo"), req.params(":ano"));	
 			return new Gson().toJson(conteudosEncontrados);
 		});
 	}
